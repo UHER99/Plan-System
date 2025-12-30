@@ -51,10 +51,11 @@ export default function PlanPage() {
               height: 40,
               borderRadius: 8,
               padding: "0 12px",
+              fontSize: 16
             }}
           >
             {[5, 10, 15, 20, 25, 30, 35, 40, 50].map((v) => (
-              <option key={v} value={v}>
+              <option key={v} value={v}> 
                 {v}
               </option>
             ))}
