@@ -60,41 +60,49 @@ function Dropdown({
   return (
     <div
       style={{
-        position: "absolute",
-        top: 64,
-        left: 0,
-        right: 0,
-        background: "#fff",
-        border: "1px solid #e5e7eb",
-        borderRadius: 12,
-        padding: 10,
-        display: "grid",
-        gridTemplateColumns: "repeat(3, 1fr)",
-        gap: 10,
-        zIndex: 20,
+        position: "fixed",
+        inset: 0,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        zIndex: 9999,
       }}
+      onClick={onClose}
     >
-      {ALL_BALLS.map((n) => (
-        <button
-          key={n}
-          onClick={() => {
-            onSelect(n);
-            onClose();
-          }}
-          title={BALL_ICON_MAP[n].label}
-          style={{
-            width: 56,
-            height: 56,
-            borderRadius: "50%",
-            border: "1px solid #d1d5db",
-            background: "#f9fafb",
-            fontSize: 30,
-            cursor: "pointer",
-          }}
-        >
-          {BALL_ICON_MAP[n].icon}
-        </button>
-      ))}
+      <div
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          background: "rgba(0,0,0,0.2)",
+          padding: 20,
+          borderRadius: 16,
+          display: "grid",
+          gridTemplateColumns: "repeat(3, 1fr)",
+          gap: 14,
+          width: 240,
+        }}
+      >
+        {ALL_BALLS.map((n) => (
+          <button
+            key={n}
+            onClick={() => {
+              onSelect(n);
+              onClose();
+            }}
+            style={{
+              width: 64,
+              height: 64,
+              borderRadius: "50%",
+              border: "1px solid #e5e7eb",
+              background: "#f9fafb",
+              fontSize: 32,
+              cursor: "pointer",
+            }}
+            title={BALL_ICON_MAP[n].label}
+          >
+            {BALL_ICON_MAP[n].icon}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }
