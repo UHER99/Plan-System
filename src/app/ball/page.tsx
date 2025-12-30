@@ -10,7 +10,7 @@ import { useBallStats } from "../../hooks/useBallStats";
 const BALL_ICON_MAP: Record<number, { icon: string; label: string }> = {
   1: { icon: "🐔", label: "Chicken" },
   2: { icon: "🦐", label: "Shrimp" },
-  3: { icon: "🐢", label: "Turtle" },
+  3: { icon: "🎃", label: "Turtle" },
   4: { icon: "🦀", label: "Crab" },
   5: { icon: "🐟", label: "Fish" },
   6: { icon: "🐸", label: "Frog" },
